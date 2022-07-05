@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Upvex - Responsive Admin Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
+    <meta content="Coderthemes" name="author">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!-- plugin css -->
+    <link href="/assets/libs/jquery-vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
+
+    <!-- App css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/css-my-style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+    <!-- Topbar Start -->
+    <div th:replace="/home :: navbar-custom"></div>
+    <!-- end Topbar -->
+
+    <!-- ========== Left Sidebar Start ========== -->
+    <div th:replace="/home :: left-side-menu"></div>
+    <!-- Left Sidebar End -->
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Upvex</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
+                                    <li class="breadcrumb-item active">Dashboard</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Well Come Product Dashboard !!! </h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card-box">
+                            <div class="row" style="margin-bottom: 20px">
+                                <div class="col-lg-6">
+                                    <a class="btn btn-primary waves-effect waves-light" th:href="@{/user/create}" style="width: 200px;">Create User</a>
+                                </div>
+                                <div class="col-lg-6">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h4 class="header-title">List User</h4>
+                                </div>
+                                <div class="col-lg-6 d-none d-sm-block" style="margin-bottom: 20px">
+                                    <form class="app-search">
+                                        <div class="app-search-box">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" required name="key_search" placeholder="Search...">
+                                                <div class="input-group-append">
+                                                    <button class="btn" type="submit">
+                                                        <i class="fe-search"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table table-striped mb-0">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Full Name</th>
+                                        <th>Email</th>
+                                        <th>Mobile</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>Trương Văn Phôn</td>
+                                        <td>phon@gmail.com</td>
+                                        <td>0961654996</td>
+                                        <td>Admin</td>
+                                        <td>Active</td>
+                                        <td><a th:href="@{/user/edit}" style="color: #00ff80">Edit</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <td>Trương Văn Phôn</td>
+                                        <td>phon@gmail.com</td>
+                                        <td>0961654996</td>
+                                        <td>Admin</td>
+                                        <td>Active</td>
+                                        <td><a th:href="@{/user/edit}" style="color: #00ff80">Edit</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th>3</th>
+                                        <td>Trương Văn Phôn</td>
+                                        <td>phon@gmail.com</td>
+                                        <td>0961654996</td>
+                                        <td>Admin</td>
+                                        <td>Active</td>
+                                        <td><a th:href="@{/user/edit}" style="color: #00ff80">Edit</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div> <!-- end table-responsive-->
+
+                        </div> <!-- end card-box -->
+                    </div>
+                </div>
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        <footer th:replace="/home :: footer"></footer>
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+<!-- Right Sidebar -->
+<div th:replace="/home :: right-bar"></div>
+<!-- /Right-bar -->
+
+<!-- Right bar overlay-->
+<div class="rightbar-overlay"></div>
+
+<!-- Vendor js -->
+<script src="/assets/js/vendor.min.js"></script>
+
+<!-- Third Party js-->
+<script src="/assets/libs/peity/jquery.peity.min.js"></script>
+<script src="/assets/libs/apexcharts/apexcharts.min.js"></script>
+<script src="/assets/libs/jquery-vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="/assets/libs/jquery-vectormap/jquery-jvectormap-us-merc-en.js"></script>
+
+<!-- Dashboard init -->
+<script src="/assets/js/pages/dashboard-1.init.js"></script>
+
+<!-- App js -->
+<script src="/assets/js/app.min.js"></script>
+
+</body>
+</html>
