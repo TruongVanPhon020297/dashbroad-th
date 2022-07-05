@@ -27,11 +27,11 @@
 <div id="wrapper">
 
     <!-- Topbar Start -->
-    <div th:replace="/home :: navbar-custom"></div>
+    <th:block th:replace="/layout/navbar-custom :: navbar_custom" />
     <!-- end Topbar -->
 
     <!-- ========== Left Sidebar Start ========== -->
-    <div th:replace="/home :: left-side-menu"></div>
+    <th:block th:replace="/layout/left-side-menu :: left_side_menu" />
     <!-- Left Sidebar End -->
 
     <!-- ============================================================== -->
@@ -98,8 +98,8 @@
                                             <th>#</th>
                                             <th>Title</th>
                                             <th>Price</th>
-                                            <th>Quantity</th>
-                                            <th>Created</th>
+                                            <th>Color</th>
+                                            <th>Description</th>
                                             <th>Updated At</th>
                                             <th>Status</th>
                                             <th>Category</th>
@@ -107,61 +107,64 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <th>1</th>
-                                        <td>Bánh Ngọt Ít Đường</td>
-                                        <td>50000</td>
-                                        <td>123</td>
-                                        <td>2022-02-02</td>
-                                        <td>2022-02-02</td>
-                                        <td>Selling</td>
-                                        <td>Bánh Ngọt</td>
-                                        <td><a th:href="@{/product/edit}" style="color: #00ff80">Edit</a></td>
-                                    </tr>
-                                    <tr>
-                                        <th>2</th>
-                                        <td>Bánh Ngọt Ít Đường</td>
-                                        <td>50000</td>
-                                        <td>123</td>
-                                        <td>2022-02-02</td>
-                                        <td>2022-02-02</td>
-                                        <td>Selling</td>
-                                        <td>Bánh Ngọt</td>
-                                        <td><a th:href="@{/product/edit}" style="color: #00ff80">Edit</a></td>
-                                    </tr>
-                                    <tr>
-                                        <th>3</th>
-                                        <td>Bánh Ngọt Ít Đường</td>
-                                        <td>50000</td>
-                                        <td>123</td>
-                                        <td>2022-02-02</td>
-                                        <td>2022-02-02</td>
-                                        <td>Selling</td>
-                                        <td>Bánh Ngọt</td>
-                                        <td><a th:href="@{/product/edit}" style="color: #00ff80">Edit</a></td>
-                                    </tr>
-                                    <tr>
-                                        <th>3</th>
-                                        <td>Bánh Ngọt Ít Đường</td>
-                                        <td>50000</td>
-                                        <td>123</td>
-                                        <td>2022-02-02</td>
-                                        <td>2022-02-02</td>
-                                        <td>Selling</td>
-                                        <td>Bánh Ngọt</td>
-                                        <td><a th:href="@{/product/edit}" style="color: #00ff80">Edit</a></td>
-                                    </tr>
-                                    <tr>
-                                        <th>3</th>
-                                        <td>Bánh Ngọt Ít Đường</td>
-                                        <td>50000</td>
-                                        <td>123</td>
-                                        <td>2022-02-02</td>
-                                        <td>2022-02-02</td>
-                                        <td>Selling</td>
-                                        <td>Bánh Ngọt</td>
-                                        <td><a th:href="@{/product/edit}" style="color: #00ff80">Edit</a></td>
-                                    </tr>
+                                    <th:block th:each="item : ${products}">
+                                        <tr>
+                                            <th th:text="${item.id}"></th>
+                                            <td th:text="${item.title}"></td>
+                                            <td th:text="${item.price}"></td>
+                                            <td th:text="${item.color}"></td>
+                                            <td th:text="${item.description}"></td>
+                                            <td>2022-02-02</td>
+                                            <td>Selling</td>
+                                            <td>Bánh Ngọt</td>
+                                            <td><a th:href="@{/product/edit}" style="color: #00ff80">Edit</a></td>
+                                        </tr>
+                                    </th:block>
+
+<!--                                    <tr>-->
+<!--                                        <th>2</th>-->
+<!--                                        <td>Bánh Ngọt Ít Đường</td>-->
+<!--                                        <td>50000</td>-->
+<!--                                        <td>123</td>-->
+<!--                                        <td>2022-02-02</td>-->
+<!--                                        <td>2022-02-02</td>-->
+<!--                                        <td>Selling</td>-->
+<!--                                        <td>Bánh Ngọt</td>-->
+<!--                                        <td><a th:href="@{/product/edit}" style="color: #00ff80">Edit</a></td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <th>3</th>-->
+<!--                                        <td>Bánh Ngọt Ít Đường</td>-->
+<!--                                        <td>50000</td>-->
+<!--                                        <td>123</td>-->
+<!--                                        <td>2022-02-02</td>-->
+<!--                                        <td>2022-02-02</td>-->
+<!--                                        <td>Selling</td>-->
+<!--                                        <td>Bánh Ngọt</td>-->
+<!--                                        <td><a th:href="@{/product/edit}" style="color: #00ff80">Edit</a></td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <th>3</th>-->
+<!--                                        <td>Bánh Ngọt Ít Đường</td>-->
+<!--                                        <td>50000</td>-->
+<!--                                        <td>123</td>-->
+<!--                                        <td>2022-02-02</td>-->
+<!--                                        <td>2022-02-02</td>-->
+<!--                                        <td>Selling</td>-->
+<!--                                        <td>Bánh Ngọt</td>-->
+<!--                                        <td><a th:href="@{/product/edit}" style="color: #00ff80">Edit</a></td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <th>3</th>-->
+<!--                                        <td>Bánh Ngọt Ít Đường</td>-->
+<!--                                        <td>50000</td>-->
+<!--                                        <td>123</td>-->
+<!--                                        <td>2022-02-02</td>-->
+<!--                                        <td>2022-02-02</td>-->
+<!--                                        <td>Selling</td>-->
+<!--                                        <td>Bánh Ngọt</td>-->
+<!--                                        <td><a th:href="@{/product/edit}" style="color: #00ff80">Edit</a></td>-->
+<!--                                    </tr>-->
                                     </tbody>
                                 </table>
                             </div> <!-- end table-responsive-->
@@ -173,7 +176,7 @@
 
         </div> <!-- content -->
 
-        <footer th:replace="/home :: footer"></footer>
+        <th:block th:replace="/layout/footer :: footer" />
 
     </div>
 
@@ -186,7 +189,7 @@
 <!-- END wrapper -->
 
 <!-- Right Sidebar -->
-<div th:replace="/home :: right-bar"></div>
+<th:block th:replace="/layout/right-bar :: right_bar" />
 <!-- /Right-bar -->
 
 <!-- Right bar overlay-->

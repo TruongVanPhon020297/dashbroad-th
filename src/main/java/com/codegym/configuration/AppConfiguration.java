@@ -1,5 +1,7 @@
 package com.codegym.configuration;
 
+import com.codegym.service.ProductService;
+import com.codegym.service.ProductServiceImpl;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -23,6 +25,12 @@ public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAwa
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
+    }
+
+
+    @Bean
+    public ProductService productService() {
+        return new ProductServiceImpl();
     }
 
     //Cấu hình Thymleaf
